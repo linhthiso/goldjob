@@ -16,7 +16,7 @@ jobs:
           sudo apt update -y
           sudo apt install wget curl -y
           curl -fsSL https://tailscale.com/install.sh | sh
-          sudo tailscale up
+          sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTHKEY }}
       - name: cài win và khởi chạy
         run: |
           sudo chmod 666 /dev/kvm
